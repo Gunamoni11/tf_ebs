@@ -1,13 +1,13 @@
 provider "aws" {
   region = "us-east-2"
 }
-resource "aws_elastic_beanstalk_application" "tftest" {
-  name        = "tf-test-name"
+resource "aws_elastic_beanstalk_application" "tftest1" {
+  name        = "tf-test1"
   description = "tf-test-desc"
 }
 
-resource "aws_elastic_beanstalk_environment" "tfenvtest" {
-  name                = "tf-test-name"
-  application         = aws_elastic_beanstalk_application.tftest.name
+resource "aws_elastic_beanstalk_environment" "tfenvtest1" {
+  name                = "tf-test1"
+  application         = aws_elastic_beanstalk_application.tftest1.name
   solution_stack_name = "64bit Amazon Linux 2015.03 v2.0.3 running Go 1.4"
 }
